@@ -1,0 +1,22 @@
+body {
+  display: block;
+  margin: 50px auto;
+  max-width: 70%;
+}
+button {
+  display: block;
+}
+h1,
+h4 {
+  display: inline;
+}
+li {
+  list-style-type: none;
+}
+img {
+  margin: 10px;
+  width: 75px;
+}
+.col {
+  text-align: center;
+}

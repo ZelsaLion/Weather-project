@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+      <div class="card">
+        <div class="card-body">
+          
+      <div class="row">
+        <div class="col-8">
+          <h1 id="temperature">4°C</h1>
+          <h4 id="description">Rain</h4>
+          <img src="images/rain.png" alt="rain" />
+          <ul>
+            <li id="humidity">
+              Humidity
+            </li>
+            <li id="wind">
+              Wind
+            </li>
+          </ul>
+          <br />
+          <h5 id="date">Sunday, 3 April 2022</h5>
+        </div>
+        <div class="col-4">
+          <h1 id="city">Sofia</h1>
+          <br />
+          <br />
+          <br />
+          <form id="search-form">
+          <input type="text" placeholder="Type a city..." autofocus = "on" id="search-city-input" />
+         <input type="submit" class="btn btn-warning" value="Search"></button>
+         <button type="button" class="btn btn-info" id="current-button">Current</button>
+          </form> 
+      
+      </div>
+      </div>
+    </div>
+</div>
+<div class="card-group">
+    <div class="card">
+      <div class="card-body">
+       <div class="row">
+        <div class="col">
+          Monday
+          <br />
+          <img src="images/clouded.png" alt="clouded" />
+        </div>
+        </div>
+      </div>
+    </div>
+      <div class="card">
+        <div class="card-body">
+        <div class="col">
+          Thuesday
+          <br />
+          <img src="images/heavily-clouded.png" alt="heavily-clouded" />
+        </div>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+        <div class="col">
+          Wednesday
+          <br />
+          <img src="images/mostly-sunny.png" alt="mostly-sunny" />
+        </div>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+        <div class="col">
+          Thursday
+          <br />
+          <img src="images/thunderstorm.png" alt="thunderstorm" />
+        </div>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+        <div class="col">
+          Friday
+          <br />
+          <img src="images/mostly-sunny.png" alt="mostly-sunny" />
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+</div>
+    </div>
+  </div>
+  <script src="src/index.js"></script>
+  </body>
+</html>
