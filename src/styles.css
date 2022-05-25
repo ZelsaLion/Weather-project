@@ -17,6 +17,19 @@ img {
   margin: 10px;
   width: 75px;
 }
+.coded-by {
+  font-family: monospace;
+}
 .col {
   text-align: center;
+}
+.open-source-code {
+  text-decoration: none;
+  color: #31d2f2;
+  transition: all 200ms ease-in-out;
+}
+.open-source-code:hover {
+  color: #ffca2c;
+  cursor: pointer;
+  text-decoration: underline;
 }
