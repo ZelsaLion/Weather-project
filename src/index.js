@@ -1,49 +1,49 @@
-let currentDate = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[currentDate.getDay()];
-let hours = currentDate.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = currentDate.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let date = currentDate.getDate();
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[currentDate.getMonth()];
-let year = currentDate.getFullYear();
+function formatDate(timestamp) {
+  let currentDate = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[currentDate.getDay()];
+  let hours = currentDate.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = currentDate.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let date = currentDate.getDate();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[currentDate.getMonth()];
+  let year = currentDate.getFullYear();
 
-let dateElement = document.querySelector("#date");
-dateElement.innerHTML = `${day} ${hours}:${minutes} <br /> ${date} ${month} ${year}`;
+  return `${day} ${hours}:${minutes} <br /> ${date} ${month} ${year}`;
+}
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
   )}°C`;
-  console.log(response);
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
@@ -52,6 +52,8 @@ function showWeather(response) {
   )} km/h`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function searchCity(event) {
