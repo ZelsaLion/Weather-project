@@ -24,9 +24,13 @@
           
       <div class="row">
         <div class="col-8">
-          <h1 id="temperature">4°C</h1>
+          <h1 id="temperature">4</h1>
+          <span class="units">
+           <a href="#" id="celsius-link" class="active">°C |</a>   
+          <a href="#" id="fahrenheit-link">°F</a>
+          </span>
           <h4 id="description">Rain</h4>
-          <img src="images/rain.png" alt="rain" />
+          <img src="images/rain.png" alt="rain" id="icon" />
           <ul>
             <li id="humidity">
               Humidity
@@ -44,7 +48,7 @@
           <br />
           <br />
           <form id="search-form">
-          <input type="text" placeholder="Type a city..." autofocus = "on" autocomplete="off" id="search-city-input" />
+          <input type="text" placeholder="Type a city..." autofocus = "on" autocomplete="off" id="city-input" />
          <input type="submit" class="btn btn-warning" value="Search"></button>
          <button type="button" class="btn btn-info" id="current-button">Current</button>
           </form> 
