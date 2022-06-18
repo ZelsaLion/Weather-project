@@ -107,6 +107,27 @@ function showCelsius(celsius) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function displayForecast() {
+  let forecasteElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+          ${day}
+          <br />
+          <img src="images/clouded.png" alt="clouded" />
+          <br />
+          25° / 18°
+        </div>`;
+    forecastHTML = forecastHTML + `</div>`;
+
+    forecasteElement.innerHTML = forecastHTML;
+  });
+}
+
 let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
@@ -120,3 +141,5 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
+
+displayForecast();
