@@ -11,26 +11,27 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+   
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
     <div class="container">
+      <div class="weather-app-wrapper">
       <div class="card">
-        <div class="card-body">
-      <div class="card">
-        <div class="card-body">
-          
+        <div class="card-body">    
       <div class="row">
-        <div class="col-8">
+        <div class="col-7">
+             <img src="images/rain.png" alt="rain" id="icon" />
           <h1 id="temperature">4</h1>
           <span class="units">
            <a href="#" id="celsius-link" class="active">°C |</a>   
           <a href="#" id="fahrenheit-link">°F</a>
           </span>
           <h4 id="description">Rain</h4>
-          <img src="images/rain.png" alt="rain" id="icon" />
           <ul>
             <li id="humidity">
               Humidity
@@ -42,15 +43,15 @@
           <br />
           <h5 id="date">Sunday, 3 April 2022</h5>
         </div>
-        <div class="col-4">
+        <div class="col-5">
           <h1 id="city">Sofia</h1>
           <br />
           <br />
           <br />
           <form id="search-form">
-          <input type="text" placeholder="Type a city..." autofocus = "on" autocomplete="off" id="city-input" />
-         <input type="submit" class="btn btn-warning" value="Search"></button>
-         <button type="button" class="btn btn-info" id="current-button">Current</button>
+          <input type="text" placeholder="Type a city..." autofocus = "on" autocomplete="off" class="city-input" id="city-input" />
+         <input type="submit" class="btn btn-danger" value="Search"></button>
+         <button type="button" class="btn btn-warning" id="current-button">Current</button>
           </form> 
       
       </div>
@@ -105,12 +106,11 @@
         </div>
       </div>
       </div>
-      </div>
-    </div>
 </div>
     </div>
   </div>
   <div class="coded-by"> <a class="open-source-code" target="_blank" href="http://github.com/ZelsaLion/Weather-project">Open-source code</a> by Melissa Koers</div>
+</div>
   <script src="src/index.js"></script>
   </body>
 </html>

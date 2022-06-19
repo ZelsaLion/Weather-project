@@ -2,6 +2,9 @@ body {
   display: block;
   margin: 50px auto;
   max-width: 70%;
+  background-color: #085f63;
+  font-family: "PT Mono", monospace;
+  font-size: 16px;
 }
 button {
   display: block;
@@ -13,29 +16,56 @@ h4 {
 li {
   list-style-type: none;
 }
+ul {
+  margin-top: 8px;
+}
 img {
   margin: 10px;
   width: 75px;
 }
+.card {
+  border: 1px solid #dadde1;
+  border-radius: 15px;
+}
+.city-input {
+  margin-bottom: 5px;
+}
 .coded-by {
   font-family: monospace;
+  color: #dadde1;
 }
 .col {
   text-align: center;
 }
 .open-source-code {
   text-decoration: none;
-  color: #31d2f2;
+  color: #ffca2c;
   transition: all 200ms ease-in-out;
 }
 .open-source-code:hover {
-  color: #ffca2c;
+  color: #dc3545;
   cursor: pointer;
   text-decoration: underline;
 }
-
+.units {
+  position: relative;
+  top: -20px;
+}
 .units .active {
   color: black;
   cursor: default;
   text-decoration: none;
+}
+.weather-app-wrapper {
+  max-width: 720px;
+  border: 1px solid #dadde1;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #dadde1;
+}
+.weather-forecast-min {
+  color: #e96e50;
+}
+.weather-forecast-date {
+  margin-top: 10px;
 }
