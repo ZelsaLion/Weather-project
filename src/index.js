@@ -98,7 +98,7 @@ function showWeather(response) {
 
   document.querySelector("#temperature").innerHTML = `${Math.round(
     celsiusTemperature
-  )}°C`;
+  )}`;
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
@@ -120,12 +120,16 @@ function showWeather(response) {
 }
 
 function searchCity(city) {
-  city.preventDefault();
-  let cityElement = document.querySelector("#city-input").value;
   let units = "metric";
   let apiKey = "9a12b220bc61ecb349edaa8a3b325540";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityElement}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#city-input").value;
+  searchCity(cityElement);
 }
 
 function searchPosition(position) {
@@ -146,25 +150,25 @@ function getCurrentPosition(event) {
 
 function showFahrenheit(fahrenheit) {
   fahrenheit.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function showCelsius(celsius) {
   celsius.preventDefault();
-  let temperatureElement = document.querySelector("temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", searchCity);
+searchForm.addEventListener("submit", handleSubmit);
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
@@ -174,3 +178,5 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
+
+searchCity("Sofia");

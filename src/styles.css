@@ -34,12 +34,8 @@ img {
   text-decoration: underline;
 }
 
-.active {
+.units .active {
   color: black;
   cursor: default;
   text-decoration: none;
-}
-
-.active:hover {
-  color: black;
 }
