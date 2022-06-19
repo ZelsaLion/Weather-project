@@ -36,7 +36,7 @@ function formatDate(timestamp) {
   let month = months[currentDate.getMonth()];
   let year = currentDate.getFullYear();
 
-  return `${day} ${hours}:${minutes} <br /> ${date} ${month} ${year}`;
+  return `${hours}:${minutes} ${day}, ${date} ${month} ${year}`;
 }
 
 function formatDay(timestamp) {
